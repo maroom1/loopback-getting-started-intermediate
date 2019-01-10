@@ -14,34 +14,34 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "postgresDB"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "postgresDB",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "postgresDB",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "postgresDB",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "postgresDB",
     "public": false
   },
   "CoffeeShop": {
-    "dataSource": "mysqlDs",
+    "dataSource": "postgresDB",
     "public": true
   },
   "Review": {
-    "dataSource": "mongoDs",
+    "dataSource": "postgresDB",
     "public": true
   },
   "Reviewer": {
-    "dataSource": "mongoDs",
+    "dataSource": "postgresDB",
     "public": true
   }
 }

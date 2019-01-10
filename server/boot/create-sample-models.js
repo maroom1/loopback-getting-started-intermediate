@@ -3,8 +3,8 @@
 var async = require('async');
 module.exports = function(app) {
   //data sources
-  var mongoDs = app.dataSources.mongoDs;
-  var mysqlDs = app.dataSources.mysqlDs;
+  var postgresDB = app.dataSources.postgresDB;
+ // var mysqlDs = app.dataSources.mysqlDs;
   //create all models
   async.parallel({
     reviewers: async.apply(createReviewers),
@@ -17,7 +17,7 @@ module.exports = function(app) {
   });
   //create reviewers
   function createReviewers(cb) {
-    mongoDs.automigrate('Reviewer', function(err) {
+    postgresDB.automigrate('Reviewer', function(err) {
       if (err) return cb(err);
       var Reviewer = app.models.Reviewer;
       Reviewer.create([{
@@ -34,7 +34,7 @@ module.exports = function(app) {
   }
   //create coffee shops
   function createCoffeeShops(cb) {
-    mysqlDs.automigrate('CoffeeShop', function(err) {
+    postgresDB.automigrate('CoffeeShop', function(err) {
       if (err) return cb(err);
       var CoffeeShop = app.models.CoffeeShop;
       CoffeeShop.create([{
@@ -51,7 +51,7 @@ module.exports = function(app) {
   }
   //create reviews
   function createReviews(reviewers, coffeeShops, cb) {
-    mongoDs.automigrate('Review', function(err) {
+    postgresDB.automigrate('Review', function(err) {
       if (err) return cb(err);
       var Review = app.models.Review;
       var DAY_IN_MILLISECONDS = 1000 * 60 * 60 * 24;

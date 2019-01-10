@@ -20,5 +20,15 @@
     "password": "L00pBack",
     "name": "mongoDs",
     "connector": "mongodb"
+  },
+  "postgresDB": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "",
+    "database": "loopback",
+    "password": "postgres",
+    "name": "postgresDB",
+    "user": "postgres",
+    "connector": "postgresql"
   }
 }
